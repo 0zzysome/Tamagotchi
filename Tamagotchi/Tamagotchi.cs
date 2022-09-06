@@ -6,15 +6,15 @@ public class Tamagotchi
     int Boredom =0;
     List<string> Words = new List<string>();
     bool isAlive = true;
-    Random generator;
+    Random generator = new Random();
     public string Name;
     public void Feed()
     {
-        Hunger--;
+        Hunger-=2;
     }
     private void ReduceBoredom()
     {
-        Boredom--;
+        Boredom-=2;
     }
     public void Teach(string Word)
     {
@@ -25,6 +25,7 @@ public class Tamagotchi
     {
         int i = generator.Next(Words.Count);
         Console.WriteLine(Words[i]);
+        ReduceBoredom();
     }
     public void PrintStats()
     {
