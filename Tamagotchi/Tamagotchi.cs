@@ -8,6 +8,14 @@ public class Tamagotchi
     bool isAlive = true;
     Random generator = new Random();
     public string Name;
+    public Tamagotchi()
+    {
+        Console.WriteLine("Name your Tamagotchi: ");
+        Name = Console.ReadLine();
+        Teach(" ");
+        Console.WriteLine($"created new Tamagotchi named {Name}");
+        
+    }
     public void Feed()
     {
         Hunger-=2;
